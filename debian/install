@@ -1,0 +1,3 @@
+.build/							usr/src/recipe-backend2
+terraform/scripts/install.sh	usr/src/recipe-backend2
+terraform/scripts/start.sh		usr/src/recipe-backend2
