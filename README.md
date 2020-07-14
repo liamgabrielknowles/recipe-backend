@@ -37,7 +37,7 @@ This application has been generated with the following capabilities and services
 ### Run
 To build and run the application:
 1. `swift build`
-1. `.build/debug/recipe-backend2`
+1. `.build/debug/recipe-backend`
 
 #### Docker
 A description of the files related to Docker can be found in the [Docker files](#docker-files) section. To build the two Docker images, run the following commands from the root directory of the project.
@@ -58,7 +58,7 @@ Finally, to run the application:
 
 
 #### Kubernetes
-To deploy your application to your Kubernetes cluster, run `helm install --name myapp .` in the `/chart/recipe-backend2` directory. You need to make sure you change the `repository` variable in your `chart/recipe-backend2/values.yaml` file points to the docker image containing your runnable application.
+To deploy your application to your Kubernetes cluster, run `helm install --name myapp .` in the `/chart/recipe-backend` directory. You need to make sure you change the `repository` variable in your `chart/recipe-backend/values.yaml` file points to the docker image containing your runnable application.
 
 ### Configuration
 Your application configuration information for any services is stored in the `localdev-config.json` file in the `config` directory. This file is in the `.gitignore` to prevent sensitive information from being stored in git. The connection information for any configured services that you would like to access when running locally, such as username, password and hostname, is stored in this file.

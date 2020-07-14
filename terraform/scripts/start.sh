@@ -2,5 +2,5 @@
 
 pkill swift
 cd .build/release
-./recipe-backend2
+./recipe-backend
 cd -

@@ -3,7 +3,7 @@
 replicaCount: 1
 revisionHistoryLimit: 1
 image:
-  repository: icr.io/replace-me-namespace/recipe-backend2
+  repository: icr.io/replace-me-namespace/recipe-backend
   tag: v1.0.0
   pullPolicy: Always
   resources:
