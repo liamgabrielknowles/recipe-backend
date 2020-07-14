@@ -2,7 +2,7 @@
 import PackageDescription
 
 let package = Package(
-    name: "recipe-backend2",
+    name: "recipe-backend",
     dependencies: [
       .package(url: "https://github.com/IBM-Swift/Kitura.git", .upToNextMinor(from: "2.8.0")),
       .package(url: "https://github.com/IBM-Swift/HeliumLogger.git", from: "1.7.1"),
@@ -11,7 +11,7 @@ let package = Package(
       .package(url: "https://github.com/IBM-Swift/Health.git", from: "1.0.0"),
     ],
     targets: [
-      .target(name: "recipe-backend2", dependencies: [ .target(name: "Application") ]),
+      .target(name: "recipe-backend", dependencies: [ .target(name: "Application") ]),
       .target(name: "Application", dependencies: [ "Kitura", "HeliumLogger", "CloudEnvironment","SwiftMetrics", "Health", 
 
       ]),
