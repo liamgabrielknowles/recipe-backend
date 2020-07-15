@@ -13,6 +13,9 @@ public class App {
     let router = Router()
     let cloudEnv = CloudEnv()
 
+    let ingredientDataStore = IngredientDataStore()
+    let workerQueue = DispatchQueue(label: "worker")
+
     public init() throws {
         // Configure logging
         initializeLogging()
@@ -23,11 +26,18 @@ public class App {
     func postInit() throws {
         // Endpoints
         initializeHealthRoutes(app: self)
+        initializeIngredientRoutes(app: self)
     }
 
     public func run() throws {
         try postInit()
         Kitura.addHTTPServer(onPort: cloudEnv.port, with: router)
         Kitura.run()
+    }
+
+    func execute(_ block: () -> Void) {
+        workerQueue.sync {
+            completion()
+        }
     }
 }
