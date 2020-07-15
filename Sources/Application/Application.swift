@@ -37,7 +37,7 @@ public class App {
 
     func execute(_ block: () -> Void) {
         workerQueue.sync {
-            completion()
+            block()
         }
     }
 }
