@@ -12,7 +12,7 @@ public let health = Health()
 public class App {
     let router = Router()
     let cloudEnv = CloudEnv()
-
+    let recipeDataStore: RecipeDataStore
     let ingredientDataStore = IngredientDataStore()
     let workerQueue = DispatchQueue(label: "worker")
 
@@ -21,12 +21,14 @@ public class App {
         initializeLogging()
         // Run the metrics initializer
         initializeMetrics(router: router)
+        recipeDataStore = RecipeDataStore(ingredientDataStore: ingredientDataStore)
     }
 
     func postInit() throws {
         // Endpoints
         initializeHealthRoutes(app: self)
         initializeIngredientRoutes(app: self)
+        initializeRecipeRoutes(app: self)
     }
 
     public func run() throws {
@@ -37,7 +39,7 @@ public class App {
 
     func execute(_ block: () -> Void) {
         workerQueue.sync {
-            completion()
+            block()
         }
     }
 }
