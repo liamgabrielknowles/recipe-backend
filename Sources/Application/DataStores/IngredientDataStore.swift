@@ -12,5 +12,4 @@ class IngredientDataStore: DataStore {
         Ingredient(name: "Chicken", amount: 1),
         Ingredient(name: "Water", amount: 3)
     ]
-    
 }
